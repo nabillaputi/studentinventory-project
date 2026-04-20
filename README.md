@@ -67,7 +67,8 @@ We envision a future where student assets are managed securely and independently
 
 - Contract Address: CCTQNYQGZSBLHWRZIWQ6DS4GUB4DV5N2SU6C23AOX5XUAJK4U3TD3TR4 
 
-  (Screenshot has been removed)
+  <img width="1918" height="939" alt="image" src="https://github.com/user-attachments/assets/aee86c1b-a54b-4331-b2fa-a7af6e6f757d" />
+
 
 ## Future Scope
 
