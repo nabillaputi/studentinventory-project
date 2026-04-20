@@ -1,26 +1,7 @@
 #![no_std]
-use soroban_sdk::{contract, contractimpl, contracttype, symbol_short, Env, String, Symbol, Vec};
-
-// Struktur data inventory mahasiswa
-#[contracttype]
-#[derive(Clone, Debug)]
-pub struct InventoryItem {
-    id: u64,
-    nama_barang: String,
-    jumlah: u32,
-    pemilik: String,
-}
-
-// Storage key
-const INVENTORY_DATA: Symbol = symbol_short!("INV_DATA");
-
-#[contract]
-pub struct InventoryContract;
-
-#[contractimpl]
-impl InventoryContract {
-
-    // Ambil semua data inventory
+    // =========================
+    // GET ALL ITEMS
+    // =========================
     pub fn get_items(env: Env) -> Vec<InventoryItem> {
         env.storage()
             .instance()
@@ -28,7 +9,9 @@ impl InventoryContract {
             .unwrap_or(Vec::new(&env))
     }
 
-    // Tambah item baru
+    // =========================
+    // ADD ITEM
+    // =========================
     pub fn add_item(env: Env, nama_barang: String, jumlah: u32, pemilik: String) -> String {
         let mut items: Vec<InventoryItem> = env.storage()
             .instance()
@@ -49,7 +32,9 @@ impl InventoryContract {
         String::from_str(&env, "Item berhasil ditambahkan")
     }
 
-    // Hapus item berdasarkan id
+    // =========================
+    // DELETE ITEM
+    // =========================
     pub fn delete_item(env: Env, id: u64) -> String {
         let mut items: Vec<InventoryItem> = env.storage()
             .instance()
@@ -67,7 +52,9 @@ impl InventoryContract {
         String::from_str(&env, "Item tidak ditemukan")
     }
 
-    // Update jumlah barang
+    // =========================
+    // UPDATE QUANTITY
+    // =========================
     pub fn update_jumlah(env: Env, id: u64, jumlah_baru: u32) -> String {
         let mut items: Vec<InventoryItem> = env.storage()
             .instance()
@@ -88,6 +75,5 @@ impl InventoryContract {
 
         String::from_str(&env, "Item tidak ditemukan")
     }
-}
 
 mod test;
