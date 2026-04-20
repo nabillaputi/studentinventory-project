@@ -65,7 +65,8 @@ We envision a future where student assets are managed securely and independently
 
 ## Contract Details
 
-- Contract Address: CBLU4IUASQ4WUMOXBFLZRSBBLILGOH33GS4LUPKFBCCCMJCDQNMF7G2M  
+- Contract Address: CCTQNYQGZSBLHWRZIWQ6DS4GUB4DV5N2SU6C23AOX5XUAJK4U3TD3TR4 
+
   (Screenshot has been removed)
 
 ## Future Scope
